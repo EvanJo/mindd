@@ -90,12 +90,19 @@ When the user requests a health check:
 - Suggest missing cross-references
 - Recommend new questions to investigate or sources to seek
 
-## Search
+## Search (qmd)
 
-At small scale, `wiki/index.md` is sufficient for navigation. As the wiki grows, use [qmd](https://github.com/tobi/qmd) for hybrid BM25/vector search over wiki pages:
-```bash
-qmd search "query terms" wiki/
-```
+At small scale, `wiki/index.md` is sufficient for navigation. As the wiki grows, use [qmd](https://github.com/tobi/qmd) — a local search engine for markdown with hybrid search, all on-device.
+
+**CLI commands:**
+- `qmd search "query"` — fast BM25 keyword search
+- `qmd vsearch "query"` — semantic vector search using embeddings
+- `qmd query "query"` — hybrid search (BM25 + vector + LLM reranking)
+- `qmd get "wiki/concepts/some-page.md"` — retrieve a specific document
+
+**Claude Code plugin** is installed via `claude plugin install qmd@qmd` (see setup.sh). This gives Claude native access to qmd's search tools without shelling out.
+
+**Re-index after changes:** Run `qmd embed` after ingesting new sources to update the vector index.
 
 ## Key Principles
 
