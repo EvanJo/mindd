@@ -1,0 +1,5 @@
+# wiki/ is a symlink to the Obsidian vault — each machine recreates it via setup.sh
+wiki
+
+# OS
+.DS_Store
