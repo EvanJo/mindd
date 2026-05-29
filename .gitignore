@@ -4,5 +4,8 @@ wiki
 # qmd search index
 index.sqlite
 
+# scratch/test data (large binaries, extraction artifacts)
+test/
+
 # OS
 .DS_Store

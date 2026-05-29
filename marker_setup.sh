@@ -9,11 +9,6 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 uv python install 3.12
 
-uv tool install --python 3.12 coarse-ink
-
-coarse setup #store keys in ~/.coarse/config.toml
+uv tool install --python 3.12  'marker-pdf[full]'
 
 
-#run
-
-coarse-review paper.pdf --host claude
